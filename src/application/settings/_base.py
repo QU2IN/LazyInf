@@ -14,7 +14,7 @@ import os
 import json
 import sys
 from django.core.exceptions import ImproperlyConfigured
-from myproject.apps.core.versioning import get_git_changeset_timestamp
+from application.apps.core.versioning import get_git_changeset_timestamp
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -98,7 +98,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = 'application.wsgi.application'
 
 
 # Database
@@ -154,9 +154,9 @@ LOCALE_PATHS = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'myproject', 'site_static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'myproject', 'site_static'),
+# ]
 
 timestamp = get_git_changeset_timestamp(BASE_DIR)
 STATIC_URL = f'/static/{timestamp}/'
