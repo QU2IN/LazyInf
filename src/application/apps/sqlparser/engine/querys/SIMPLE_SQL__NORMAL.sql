@@ -1,0 +1,1 @@
+select A.kek, B.lol from SOURCE_1 A join SOURCE_2 B on A.id = B.id and b.dtt <= to_date('01.01.2020')
